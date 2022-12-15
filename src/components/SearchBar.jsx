@@ -1,7 +1,7 @@
-import { useState } from "react";
+// import { useState } from "react";
 
 function SearchBar(props) {
-  let [searchTerm, setSearchTerm] = useState("");
+//   let [searchTerm, setSearchTerm] = useState("");
 
   return (
     <form>
