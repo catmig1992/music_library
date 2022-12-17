@@ -5,7 +5,8 @@ import { DataContext } from "./context/DataContext";
 import { SearchContext } from "./context/SearchContext";
 import "./App.css";
 
-const App = () => {
+function App() {
+  let [searchTerm, setSearchTerm] = useState(" ");
   let [message, setMessage] = useState("Search for Music!");
   let [data, setData] = useState([]);
   let searchInput = useRef("");
@@ -14,7 +15,7 @@ const App = () => {
 
   const handleSearch = (e, term) => {
     e.preventDefault();
-    // setSearch(term.toUpperCase());
+    setSearchTerm(term);
     const fetchData = async () => {
       document.title = `${term} Music`;
       const response = await fetch(API_URL + term);
@@ -44,6 +45,6 @@ const App = () => {
       </DataContext.Provider>
     </div>
   );
-};
+}
 
 export default App;
