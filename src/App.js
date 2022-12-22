@@ -1,4 +1,4 @@
-import { useEffect, useState, Fragment } from "react";
+import { useState, Fragment } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Gallery from "./components/Gallery";
 import SearchBar from "./components/SearchBar";
@@ -13,21 +13,6 @@ const App = () => {
 
   const API_URL = "https://itunes.apple.com/search?term=";
 
-  useEffect(() => {
-    if (search) {
-      const fetchData = async () => {
-        document.title = `${search} Music`;
-        const response = await fetch(API_URL + search);
-        const resData = await response.json();
-        if (resData.results.length > 0) {
-          return setData(resData.results);
-        } else {
-          return setMessage("Not Found");
-        }
-      };
-      fetchData();
-    }
-  }, [search]);
 
   const handleSearch = (e, term) => {
     e.preventDefault();
