@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, useRef, Fragment } from "react";
 import Gallery from "./components/Gallery";
 import SearchBar from "./components/SearchBar";
 import { DataContext } from "./context/DataContext";
