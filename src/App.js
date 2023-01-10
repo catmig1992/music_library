@@ -14,7 +14,7 @@ function App() {
   let searchInput = useRef("");
 
   const API_URL = "https://itunes.apple.com/search?term=";
- 
+
   const handleSearch = (e, term) => {
     e.preventDefault();
     const fetchData = async () => {
